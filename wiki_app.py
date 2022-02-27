@@ -5,7 +5,7 @@ import os
 st.title("Wiki page exporter")
 
 st.write(
-    "A simple app that uses the [wikipedia-api](https://share.streamlit.io/mesmith027/streamlit_webapps/main/MC_pi/streamlit_app.py) to export a wiki page to a .txt file"
+    "A simple app that uses the [wikipedia-api](https://pypi.org/project/Wikipedia-API/) to export a wiki page to a .txt file"
 )
 
 
