@@ -20,13 +20,13 @@ page_wiki = wiki.page(page_name)
 if page_wiki.exists():
     st.header("Output:")
     text_to_save = os.linesep.join([s for s in page_wiki.text.splitlines() if s])
-    text_to_save = text_to_save.replace("\n", "")
+    text_to_save = text_to_save.replace("\n", " ")
     st.text_area("", value=text_to_save, height=500)
 
     st.download_button(
         label="Download data as .txt file",
         data=text_to_save,
-        file_name="page_name.txt",
+        file_name=page_name+".txt",
         mime="text/csv",
     )
 else:
