@@ -1,5 +1,7 @@
 import streamlit as st
 import wikipediaapi
+import nltk
+nltk.download('punkt')
 import os
 
 st.title("Wiki page exporter")
@@ -21,7 +23,8 @@ if page_wiki.exists():
     st.header("Output:")
     text_to_save = os.linesep.join([s for s in page_wiki.text.splitlines() if s])
     text_to_save = text_to_save.replace("\n", " ")
-    st.text_area("", value=text_to_save, height=500)
+    tokens = nltk.word_tokenize(text_to_save)
+    st.text_area("", value=" ".join(tokens), height=500)
 
     st.download_button(
         label="Download data as .txt file",
